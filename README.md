@@ -26,7 +26,7 @@ Logo após, crie a URL para referenciar a visão criada. Esta URL deverá refere
 
 **Template** 
 
-O template `lista_tesouros.html` já está pronto mas a lista de tesouros não está sendo exibida ainda. Faça com que as linhas da tabela de tesouros sejam criadas dinamicamente. Também apresente o valor total. [Você pode aplicar um filtro para apresentar os valores de moeda da melhor forma](https://docs.djangoproject.com/en/2.1/ref/templates/builtins/#floatformat). Deixe as colunas de editar e excluir ainda apenas com suas respectivas imagens 'imgs/edit.png' e 'imgs/delete.svg', use a tag/comando `static` para isso. Ao imprimir os campos, fique atento para não errar o nome de cada campo em `models.py`.
+O template `lista_tesouros.html` já está pronto mas a lista de tesouros não está sendo exibida ainda. Faça com que as linhas da tabela de tesouros sejam criadas dinamicamente. Também apresente o valor total. Deixe as colunas de editar e excluir ainda apenas com suas respectivas imagens 'imgs/edit.png' e 'imgs/delete.svg', use a tag/comando `static` para isso. Ao imprimir os campos, fique atento para não errar o nome de cada campo em `models.py`.
 
  
 Rode o servidor executando `python3 manage.py runserver` e verifique o resultado.
