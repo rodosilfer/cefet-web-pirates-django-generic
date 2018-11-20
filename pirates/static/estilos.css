@@ -5,6 +5,7 @@ tbody a img{
   height: 30px;
   cursor: pointer;
 }
+
 form{
   background-color: rgba(255, 255, 255, 0.5);
   width: 70%;
@@ -187,4 +188,15 @@ thead {
 caption {
   font-size: 75%;
   font-style: italic;
+}
+td button{
+  background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+}
+button img{
+  width: 30px;
 }
