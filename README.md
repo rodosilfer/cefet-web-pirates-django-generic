@@ -79,7 +79,7 @@ Primeiramente, iremos ver como é fácil fazer uma ListView. Depois, iremos comp
 
 - Exclua todos os métodos da classe `ListarTesouro` (copie o codigo para um bloco de notas, você irá precisar dele). Agora, essa classe será superclasse de `ListView` e possuirá apenas os atributos estáticos `model` e `template_name` similar ao funcionamento dos exercícios anteriores. A classe ListView pertence ao módulo django.views.generic.list. 
 
-- Agora, no template `lista_tesouros.html`, a lista de tesouros tem o nome de `object_list` faça a alteração apropriada para que a listagem funcione.
+- Agora, no template `lista_tesouros.html`, a variável da lista de tesouros se chama `object_list` faça a alteração apropriada para que a listagem funcione.
 
 Execute o servidor e teste a alteração. Se tudo ocorreu bem, a listagem funcionou (se você inserir algum elemento). Porém, não é exibido o total geral nem o valor total por tesouro. Para isso, faça o seguinte:
 
