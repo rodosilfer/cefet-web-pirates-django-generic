@@ -59,7 +59,7 @@ Logo após, você pode eliminar todos os atributos das classes `InserirTesouro` 
 
 - Não é uma boa prática de programação excluir via GET (ou seja, por meio da URL). Por isso, a forma indicada em fazer é criar um formulário com o botão de excluir. Por causa disso, a classe `RemoveView` exclui apenas se enviarmos via POST.  Se enviássemos via GET, iriamos ter que criar um página de confirmação para a exclusão ser sempre via POST.
 
-Assim, vamos implementar a primeira alternativa: crie um formulário para o botão de excluir na mesma célula que estava o link de excluir, mas, ao invés do link, colocariamos o seguinte:
+Assim, no template de listar os tesouros, vamos implementar a primeira alternativa: crie um formulário para o botão de excluir na mesma célula que estava o link de excluir, mas, ao invés do link, colocariamos o seguinte:
 ```html
 <form method="POST" action="<!-- URL de exclusão -->">
                  {% csrf_token %}
