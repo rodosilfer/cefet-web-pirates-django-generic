@@ -17,7 +17,7 @@ Antes de começar: não esqueça de executar o `makemigrations` e o `migrate` pa
 
 	- `template_name`: endereço do template a ser renderizado
 
-	- `success_url`: URL que será redirecionada caso tenha sido inserido com sucesso. Use o comando `reverse_lazy` para obter a URL pelo nome. O comando `reverse_lazy` tem a mesma funcionalidade mas, ela só é executado quando a variável `success_url` for lida (e não quando for atribuida) - por isso é lazy. Assim, evita-se que a URL seja resolvida antes do carregamento do arquivo `urls.py`.
+	- `success_url`: URL que será redirecionada caso tenha sido inserido com sucesso. Use o comando `reverse_lazy` para obter a URL pelo nome. A função `reverse_lazy` tem a mesma funcionalidade que a `reverse`  mas, ela só é executada quando a variável `success_url` for lida (e não quando for atribuida) - por isso é lazy. Assim, evita-se que a URL seja resolvida antes do carregamento do arquivo `urls.py`. Essa função está no módulo `django.urls`.
 
 - Altere no template `salvar_tesouro.html` o formulário que está sendo impresso. Agora o nome dele é `form`.
 
@@ -42,7 +42,7 @@ Quando há repetição de código, da forma que deixamos os atributos estáticos
 class Funcionario(Pessoa,Pagavel):
 	...
 ```
-Significa que `Pessoa` e `Pagavel` são superclasses de Funcionario.
+Significa que `Pessoa` e `Pagavel` são superclasses de Funcionario. Deixe o SalvarTesouro como a primeira classe a ser herdada (pois a seguinte necessita dos dados da SalvarTesouro já carregada).
 
 
 Logo após, você pode eliminar todos os atributos das classes `InserirTesouro` e `AtualizarTesouro`. Deixe o comando `pass` no lugar dos atributos para que o código funcione sem erro de sintaxe. Rode o servidor e verifique se ainda a inserção e atualização está funcionando.
@@ -57,7 +57,7 @@ Logo após, você pode eliminar todos os atributos das classes `InserirTesouro` 
 
 - Na URL de remover o tesouro, altere o parâmetro de `id` para `pk`.
 
-- Não é uma boa prática de programação excluir via GET (ou seja, por meio da URL). Por isso, a forma indicada em fazer é criar um formulário com o botão de excluir. Por causa disso, a classe `RemoveView` exclui apenas se enviarmos via POST.  Se enviássemos via GET, iriamos ter que criar um página de confirmação para a exclusão ser sempre via POST.
+- Não é uma boa prática de programação excluir via GET (ou seja, por meio da URL). Por isso, a forma indicada em fazer é criar um formulário com o botão de excluir. Por causa disso, a classe `DeleteView` exclui apenas se enviarmos via POST.  Se enviássemos via GET, iriamos ter que criar um página de confirmação para a exclusão ser sempre via POST.
 
 Assim, no template de listar os tesouros, vamos implementar a primeira alternativa: crie um formulário para o botão de excluir na mesma célula que estava o link de excluir, mas, ao invés do link, colocariamos o seguinte:
 ```html
@@ -77,7 +77,7 @@ Veja que usamos o `csrf_token` por isso, temos mais segurança em excluir ao faz
 
 Primeiramente, iremos ver como é fácil fazer uma ListView. Depois, iremos complicar um pouco :-).
 
-- Exclua todos os métodos da classe `ListarTesouro` (copie o codigo para um bloco de notas, você irá precisar dele). Agora, essa classe será superclasse de `ListView` e possuirá apenas os atributos estáticos `model` e `template_name` similar ao funcionamento dos exercícios anteriores.
+- Exclua todos os métodos da classe `ListarTesouro` (copie o codigo para um bloco de notas, você irá precisar dele). Agora, essa classe será superclasse de `ListView` e possuirá apenas os atributos estáticos `model` e `template_name` similar ao funcionamento dos exercícios anteriores. A classe ListView pertence ao módulo django.views.generic.list. 
 
 - Agora, no template `lista_tesouros.html`, a lista de tesouros tem o nome de `object_list` faça a alteração apropriada para que a listagem funcione.
 
