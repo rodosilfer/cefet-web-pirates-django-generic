@@ -19,7 +19,7 @@ Antes de começar: não esqueça de executar o `makemigrations` e o `migrate` pa
 
 	- `success_url`: URL que será redirecionada caso tenha sido inserido com sucesso. Use o comando `reverse_lazy` para obter a URL pelo nome. O comando `reverse_lazy` tem a mesma funcionalidade mas, ela só é executado quando a variável `success_url` for lida (e não quando for atribuida) - por isso é lazy. Assim, evita-se que a URL seja resolvida antes do carregamento do arquivo `urls.py`.
 
-- Altere no template `SalvarTesouro.html` o formulário que está sendo impresso. Agora o nome dele é `form`.
+- Altere no template `salvar_tesouro.html` o formulário que está sendo impresso. Agora o nome dele é `form`.
 
 - Para que o nome do label de `img_tesouro` seja `Imagem`, defina esse nome no parametro `verbose_name`  da classe `ImageField` do atributo `img_tesouro` em `models.py`.
 
